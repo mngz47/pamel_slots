@@ -266,11 +266,22 @@ padding-left:30px;
 </div>
 
 </div>
-<form action=https://www.payfast.co.za/eng/process method=post id=payment_ff class=invisible >
+   
+   <script>
+      
+      var HOME_ = 'https://pamel-slots.heroku.com/';
+      
+      function appendHome(){
+         e('return_url').value = HOME_+e('return_url').value;
+         e('cancel_url').value = HOME_+e('cancel_url').value;
+      }
+      
+   </script>
+<form action=https://www.payfast.co.za/eng/process method=post id=payment_ff class=invisible onsubmit=appendHome(); >
 <input type=text name=merchant_id value=12647788 />
 <input type=text name=merchant_key value=nliu1lbt07r75 />
-<input type=text id=return_url name=return_url value=https://www.productlists.co.za/services/pamel_slots/index.html?pp=1 />
-<input type=text name=cancel_url value=https://www.productlists.co.za/services/pamel_slots/index.html?pp=0 />
+<input type=text id=return_url name=return_url value=index.php?pp=1 />
+<input type=text name=cancel_url value=index.php?pp=0 />
 <input type=text id=amount name=amount value=40 />
 <input type=text name=item_name value="Pamel Slots" />
 <input type=text name=email_confirmation value="1" />
