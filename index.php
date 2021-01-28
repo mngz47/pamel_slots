@@ -165,7 +165,8 @@ setTimeout(function(){ e("I_3").src=img3;e("I_3").alt=p3; }, 3000);
 setTimeout(function(){ 
 
 if(p1==p2 && p1==p3){
-alert('Winner');
+alert('You have WON! We will send you email with further details.');
+   
 }else{
 alert('Try Again');
 }
