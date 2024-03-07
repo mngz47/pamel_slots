@@ -176,14 +176,14 @@ vegs=R5000</option>
 </p>
 <table class=table >
 <tr>
-<td><img id=I_1 src=rr/loader.gif width=100px /></td>
-<td><img id=I_2 src=rr/loader.gif width=100px /></td>
-<td><img id=I_3 src=rr/loader.gif width=100px /></td>
+<td><img id=I_1 src=rr/loader.gif width=100px onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg'" /></td>
+<td><img id=I_2 src=rr/loader.gif width=100px onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg'" /></td>
+<td><img id=I_3 src=rr/loader.gif width=100px onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/mngz47/productlists-resources/main/p_logo.jpg'" /></td>
 </tr>
 </table>
    
-<button class="btn btn-default" style="width:30%;margin-bottom:20px;" onclick="setInterval(p_play(),4000);return false;"  >AUTO</button>
-   <button class="btn btn-default" style="width:30%;margin-bottom:20px;" onclick="p_play();return false;"  >FREE</button>
+<button class="btn btn-default" style="width:30%;margin-bottom:20px;" onclick="setInterval(play_p(),4000);return false;"  >AUTO</button>
+<button class="btn btn-default" style="width:30%;margin-bottom:20px;" onclick="play_p();return false;"  >FREE</button>
 <button class="btn btn-default" style="width:30%;margin-bottom:20px;" onclick="e('payment_ff').submit();return false;" id=play >PLAY</button>
 
 <script>
@@ -238,16 +238,16 @@ padding-left:30px;
 </div>
 
    <script>
-      
-      var HOME_ = 'https://pamel-slots.heroku.com/';
+      /*
+      var HOME_ = "https://"+window.location.hostname;
       
       function appendHome(){
          e('return_url').value = HOME_+e('return_url').value;
          e('cancel_url').value = HOME_+e('cancel_url').value;
       }
-      
+      */
    </script>
-<form action=https://www.payfast.co.za/eng/process method=post id=payment_ff class=invisible onsubmit=appendHome(); >
+<form action=https://www.payfast.co.za/eng/process method=post id=payment_ff class=invisible >
 <input type=text name=merchant_id value=12647788 />
 <input type=text name=merchant_key value=nliu1lbt07r75 />
 <input type=text id=return_url name=return_url value=https://mngz47.github.io/pamel_slots/index.html?pp=1 />
