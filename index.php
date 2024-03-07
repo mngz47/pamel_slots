@@ -3,6 +3,7 @@
 <head>
 <title>Productlists | Pamel Slots</title>
 <link rel=stylesheet href=rr/style.css />
+   <link rel=stylesheet href=rr/pamel_style.css />
 <link rel=stylesheet href=rr/bootstrap.min.css />
 
 <meta name="autor" content="Mongezi Mafunda" />
