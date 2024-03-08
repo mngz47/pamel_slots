@@ -35,7 +35,7 @@ payfast2();
 
 }
 
-function checkChallenge(){
+function checkCredits(){
 const urlParams = new URLSearchParams(window.location.search);
 const payment = urlParams.get('pp');
 
@@ -43,7 +43,7 @@ const payment = urlParams.get('pp');
   if(payment!=null){
 if(payment==1){
   setCookie("payment", 1, 30);
-  startChallenge();
+  alert('Payment Successfull');
 }else if(payment==0){
   setCookie("payment", 0, 30);
 alert('Payment Cancelled');
@@ -52,25 +52,20 @@ alert('Payment Cancelled');
   }
 }
 
-var activeChallenge = false;
-         
-function confirmChallenge(){
-  activeChallenge = getCookie("payment")==1;
+function confirmCredits(){
+ var activeChallenge = getCookie("payment")==1;
 
   if(activeChallenge){
-if(getCookie("game_index")){
- game_index =  parseInt(getCookie("game_index"));
-}else{
-  setCookie("game_index", 1, 30);
-  game_index = 1;
+if(getCookie("price")){
+ credits =  parseInt(getCookie("price"));
 }
-
-    startChallenge();
   }
 
-return activeChallenge;
 }
 
+checkCredits();
+confirmCredits();
+showCredits();
 
 function getCredits(){
   
