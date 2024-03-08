@@ -69,7 +69,7 @@ showCredits();
 
 function getCredits(){
   
-e("start").innerHTML = "<input type=number id=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>";
+e("start").innerHTML = "<div style='margin-top:200px;' ><input type=number id=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button></div>";
   
 }
 
