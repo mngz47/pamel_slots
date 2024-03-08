@@ -61,6 +61,14 @@ var vegs =
 img1 = houses[0];
 img2 = cars[0];
 img3 = fruits[0];
+
+function auto_play_p(){
+if(track_action()){
+   play_p();
+}
+}
+
+
 function play_p(){
 if(e('g_type').value!=-1){
 e("I_1").src='rr/loader.gif';
@@ -103,7 +111,7 @@ var country = prompt('Enter country.');
     writeUserData(userId, name, country, email);
    
 }else{
-alert('Try Again');
+//alert('Try Again');
 }
  }, 4000);
 }else{ 
