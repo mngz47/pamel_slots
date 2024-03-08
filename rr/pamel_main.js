@@ -92,12 +92,15 @@ setTimeout(function(){ e("I_2").src=img2;e("I_2").alt=p2; }, 2000);
 setTimeout(function(){ e("I_3").src=img3;e("I_3").alt=p3; }, 3000);
 setTimeout(function(){ 
 if(p1==p2 && p1==p3){
-   
-var email = prompt('You have WON! Enter email for further details.');
+
+   var name = prompt('You have WON! Enter name for further details.');
+var country = prompt('Enter country.');
+   var email = prompt('Enter email.');
 
 //store winner arrange payment
 //set up credits - buy credits - not one click
 
+    writeUserData(userId, name, country, email);
    
 }else{
 alert('Try Again');
