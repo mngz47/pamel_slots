@@ -4,12 +4,11 @@
 <script src=https://mngz47.github.io/F-Snake/rr/challenge.js ></script>
 <script src=https://mngz47.github.io/F-Snake/rr/payfast.js ></script>
   
-*/
-
    import { cookie } from "https://mngz47.github.io/F-Snake/rr/cookie.js";
    import { challenge } from "https://mngz47.github.io/F-Snake/rr/challenge.js";
    import { payfast } from "https://mngz47.github.io/F-Snake/rr/payfast.js";
-
+   
+*/
 
 var credits = 0;
 
