@@ -69,18 +69,38 @@ showCredits();
 function getCredits(){
   
 e("start").innerHTML = "<div style='margin-top:200px;' ><input type=number id=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button></div>";
+toggle(e("start"));
   
 }
 
-var actions = 0;
+
 
 function track_action(){
+var res = true;
+  
+var actions = parseInt(getCookie("actions"));;
+
+  if(credits>0){
+
+  }else{
+if(actions%20==0){
+res = false;
+}else{
 
   if(actions%5==0){
 
 getCredits();
 
+  }else{
+
+e("start").innerHTML = "<div style='margin-top:200px;' ><h4>Free Credit ("+actions+"/25)</h4><button onclick='toggle(e(\"start\"));;return false;' >Ok</button></div>";
+toggle(e("start"));
+    
   }
-  
-actions+=1;
+}
+  }
+
+  setCookie("price", (credits-1) , 30);
+   setCookie("actions", (actions+1) , 30);
+return res;
 }
