@@ -17,3 +17,15 @@ FBInstant.startGameAsync()
   }
 );
 </script>
+
+##Payment SDK
+  <script>
+      /*
+      var HOME_ = "https://"+window.location.hostname;
+      
+      function appendHome(){
+         e('return_url').value = HOME_+e('return_url').value;
+         e('cancel_url').value = HOME_+e('cancel_url').value;
+      }
+      */
+   </script>
