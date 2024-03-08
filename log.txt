@@ -1,0 +1,19 @@
+##Facebook SDK
+
+<script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
+
+<script>
+   FBInstant.initializeAsync()
+  .then(function(){
+  
+FBInstant.startGameAsync()
+  .then(function() {
+  // Retrieving context and player information can only be done
+  // once startGameAsync() resolves
+  
+  var contextId = FBInstant.context.getID();
+  var contextType = FBInstant.context.getType();
+});
+  }
+);
+</script>
