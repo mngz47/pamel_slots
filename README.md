@@ -1,6 +1,6 @@
 # pamel_slots
 
-![Uploading image.png…]()
+![image](https://github.com/mngz47/pamel_slots/assets/15697629/b2667b29-04cd-4b91-9541-95156c767643)
 
 
 "Pamel Slots" is a captivating virtual slot machine that combines the thrill of traditional slot gaming with modern digital innovation. Designed to provide an immersive and entertaining experience, Pamel Slots boasts a visually stunning interface with vibrant colors, dynamic graphics, and smooth animations.
