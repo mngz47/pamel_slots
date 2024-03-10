@@ -68,7 +68,6 @@ showCredits();
 
 function getCredits(){
   
-e("start").innerHTML = "<div style='margin-top:200px;' ><input type=number id=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button></div>";
 toggle(e("start"));
   
 }
@@ -96,11 +95,11 @@ res = false;
 getCredits();
 
   }else{
-
+   /*
 e("start").innerHTML = "<div style='margin-top:200px;' ><h4>Free Credit ("+actions+"/25)</h4><button onclick='toggle(e(\"start\"));;return false;' >Ok</button></div>";
     e("start").style.zIndex=1000;
 toggle(e("start"));
-    
+    */
   }
 }
   }
