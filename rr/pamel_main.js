@@ -134,3 +134,7 @@ var aa = (vv=='houses'?100:(vv=='cars'?50:(vv=='fruits'?25:5)));
 e('amount').value = aa;
 e('return_url').value+='&vv='+vv;
 }
+
+function getAmount(vv){
+return (vv=='houses'?100:(vv=='cars'?50:(vv=='fruits'?25:5)));
+}
