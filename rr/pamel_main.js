@@ -68,10 +68,15 @@ function auto_play_p(){
     track_action();
 }
 
+var auto_play_id = 0;
+
 function auto_play_p_init(){
-  setInterval(auto_play_p,4000);
+ var auto_play_id = setInterval(auto_play_p,4000);
 }
 
+function auto_play_p_stop(){
+  clearInterval(auto_play_id);
+}
 
 
 function setGType(g_type){
