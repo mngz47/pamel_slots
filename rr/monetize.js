@@ -76,7 +76,8 @@ toggle(e("start"));
 
 
 function track_action(){
-var res = true;
+    showCredits();
+  var res = true;
 var actions = 0;
   
   if(getCookie("actions")){
@@ -97,6 +98,7 @@ getCredits();
   }else{
 
 e("start").innerHTML = "<div style='margin-top:200px;' ><h4>Free Credit ("+actions+"/25)</h4><button onclick='toggle(e(\"start\"));;return false;' >Ok</button></div>";
+    e("start").style.zIndex=1000;
 toggle(e("start"));
     
   }
