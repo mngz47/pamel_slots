@@ -15,6 +15,9 @@ var credits = 0;
 
 function showCredits(){
 
+if(getCookie("price")){
+ credits =  parseInt(getCookie("price"));
+}
   document.body.innerHTML += "<h4 style='position:absolute;float:right;' >CREDITS: "+credits+"</h4>";
 
 }
@@ -68,9 +71,8 @@ confirmCredits();
 showCredits();
 
 
-function track_action(){
+async function track_action(){
     showCredits();
-  var res = true;
 var actions = 0;
   
   if(getCookie("actions")){
@@ -87,5 +89,4 @@ toggle(e("start"));
 
   setCookie("price", (credits-1) , 30);
    setCookie("actions", (actions+1) , 30);
-return res;
 }
