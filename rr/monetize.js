@@ -12,6 +12,7 @@
 
 var credits = 0;
 
+var cost = 1;
 
 function showCredits(){
 
@@ -89,6 +90,6 @@ toggle(e("start"));
 }
   }
 
-  setCookie("price", (credits-1) , 30);
+  setCookie("price", (credits-cost) , 30);
    setCookie("actions", (actions+1) , 30);
 }
