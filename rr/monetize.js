@@ -77,8 +77,11 @@ toggle(e("start"));
 
 function track_action(){
 var res = true;
+var actions = 0;
   
-var actions = parseInt(getCookie("actions"));;
+  if(getCookie("actions")){
+actions = parseInt(getCookie("actions"));
+  }
 
   if(credits>0){
 
