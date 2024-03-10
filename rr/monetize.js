@@ -49,6 +49,8 @@ if(payment==1){
   alert('Payment Successfull');
 }else if(payment==0){
   setCookie("payment", 0, 30);
+   setCookie("price", 0 , 30);
+    setCookie("actions", 0 , 30);
 alert('Payment Cancelled');
 }
 }
