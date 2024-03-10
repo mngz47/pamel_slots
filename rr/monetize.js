@@ -19,8 +19,7 @@ function showCredits(){
 if(getCookie("price")){
  credits =  parseInt(getCookie("price"));
 }
-  document.body.innerHTML += "<h4 style='position:absolute;float:right;margin:4px;background:rgba(0,0,0,0.7);color:white;' >CREDITS: "+credits+"</h4>";
-
+e("credits").innerHTML = "CREDITS: "+credits;
 }
 //userId
 
