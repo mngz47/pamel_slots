@@ -42,6 +42,7 @@ const payment = urlParams.get('pp');
   if(payment!=null){
 if(payment==1){
   setCookie("payment", 1, 30);
+  setCookie("actions", 0 , 30);
   alert('Payment Successfull');
 }else if(payment==0){
   setCookie("payment", 0, 30);
@@ -66,13 +67,6 @@ checkCredits();
 confirmCredits();
 showCredits();
 
-function getCredits(){
-  
-toggle(e("start"));
-  
-}
-
-
 
 function track_action(){
     showCredits();
@@ -86,21 +80,8 @@ actions = parseInt(getCookie("actions"));
   if(credits>0){
 
   }else{
-if(actions%20==0){
-res = false;
-}else{
-
-  if(actions%5==0){
-
-getCredits();
-
-  }else{
-   /*
-e("start").innerHTML = "<div style='margin-top:200px;' ><h4>Free Credit ("+actions+"/25)</h4><button onclick='toggle(e(\"start\"));;return false;' >Ok</button></div>";
-    e("start").style.zIndex=1000;
+if(actions>10){
 toggle(e("start"));
-    */
-  }
 }
   }
 
