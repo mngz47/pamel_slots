@@ -73,6 +73,7 @@ function setGType(g_type){
 setCookie("g_type",g_type , 30);
 }
 
+
 function play_p(){
 
 var g_type = -1;
@@ -137,4 +138,8 @@ e('return_url').value+='&vv='+vv;
 
 function getAmount(vv){
 return (vv=='houses'?100:(vv=='cars'?50:(vv=='fruits'?25:5)));
+}
+
+if(getCookie("g_type")){
+  cost = getAmount(getCookie("g_type"));
 }
