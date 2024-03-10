@@ -63,9 +63,8 @@ img2 = cars[0];
 img3 = fruits[0];
 
 function auto_play_p(){
-if(track_action()){
+   track_action();
    play_p();
-}
 }
 
 
