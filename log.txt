@@ -29,3 +29,20 @@ FBInstant.startGameAsync()
       }
       */
    </script>
+
+if(actions%20==0){
+res = false;
+}else{
+
+  if(actions%5==0){
+
+getCredits();
+
+  }else{
+   /*
+e("start").innerHTML = "<div style='margin-top:200px;' ><h4>Free Credit ("+actions+"/25)</h4><button onclick='toggle(e(\"start\"));;return false;' >Ok</button></div>";
+    e("start").style.zIndex=1000;
+toggle(e("start"));
+    */
+  }
+}
