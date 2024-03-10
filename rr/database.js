@@ -1,8 +1,6 @@
+class database{
+
 var userId = 0;
-
-
-
-
 
 // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
@@ -37,6 +35,7 @@ var userId = 0;
     country : country,
     gtype : g_type
   });
+}
 }
 
       
