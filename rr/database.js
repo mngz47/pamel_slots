@@ -1,5 +1,10 @@
 class database{
 
+ constructor() {
+
+   
+ }
+  
 var userId = 0;
 
 // Import the functions you need from the SDKs you need
