@@ -64,10 +64,15 @@ img3 = fruits[0];
 
 function auto_play_p(){
   
-   play_p();
+    play_p();
     track_action();
-   
 }
+
+function auto_play_p_init(){
+  setInterval(auto_play_p,4000);
+}
+
+
 
 function setGType(g_type){
 setCookie("g_type",g_type , 30);
