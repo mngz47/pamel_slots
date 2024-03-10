@@ -1,11 +1,11 @@
-class database{
+class Database{
 
  constructor() {
 
    
  }
-  
-let userId = 0;
+  const userId = 0;
+
 
 // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
@@ -43,4 +43,4 @@ let userId = 0;
 }
 }
 
-      
+  export default (new Database);    
