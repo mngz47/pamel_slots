@@ -63,13 +63,25 @@ img2 = cars[0];
 img3 = fruits[0];
 
 function auto_play_p(){
-   track_action();
+  
    play_p();
+    track_action();
+   
 }
 
+function setGType(g_type){
+setCookie("g_type",g_type , 30);
+}
 
 function play_p(){
-if(e('g_type').value!=-1){
+
+var g_type = -1;
+   if(getCookie("g_type")){
+g_type = getCookie("g_type");
+   }
+   
+   if(g_type!=-1){
+
 e("I_1").src='rr/loader.gif';
 e("I_2").src='rr/loader.gif';
 e("I_3").src='rr/loader.gif';
