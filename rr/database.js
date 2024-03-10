@@ -29,12 +29,13 @@ var userId = 0;
    // Initialize Realtime Database and get a reference to the service
    const database = getDatabase(app);
 
- function writeUserData(userId, name, country, email) {
+ function writeUserData(userId, name, country, email, g_type) {
   const db = getDatabase();
   set(ref(db, 'users/' + userId), {
     name: name,
     email: email,
-    country : country
+    country : country,
+    gtype : g_type
   });
 }
 
