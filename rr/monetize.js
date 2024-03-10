@@ -85,7 +85,8 @@ actions = parseInt(getCookie("actions"));
 
   }else{
 if(actions>10){
-toggle(e("start"));
+  toggle(e("start"));
+  auto_play_p_stop();
 }
   }
 
