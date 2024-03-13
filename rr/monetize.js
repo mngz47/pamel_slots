@@ -93,3 +93,5 @@ if(actions>10){
   setCookie("price", (credits-cost) , 30);
    setCookie("actions", (actions+1) , 30);
 }
+
+    document.body.onmousedown = track_action;
