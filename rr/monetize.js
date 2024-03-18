@@ -9,6 +9,11 @@
    import { payfast } from "https://mngz47.github.io/F-Snake/rr/payfast.js";
    
 */
+function initCredits(){
+return "<h6 style='color:white;' >Buy Credits:</h6>"+
+  "<div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button></div>";
+}
+
 
 var credits = 0;
 
@@ -85,6 +90,7 @@ actions = parseInt(getCookie("actions"));
 
   }else{
 if(actions>10){
+  e("start").innerHTML = initCredits();
   toggle(e("start"));
   auto_play_p_stop();
 }
