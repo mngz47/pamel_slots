@@ -55,6 +55,7 @@ this.price = price;
 
    credits =  parseInt(getCookie("price"));
   showCredits();
+    toggle(e("start"));
   alert('Payment Successfull');
   }
   
