@@ -45,21 +45,18 @@ payfast2();
 }
 
 function monetize_voucher(price){
-this.price = price;
-
+  this.price = price;
   if(price<100){
   
   setCookie("price", price, 30);
   setCookie("payment", 1, 30);
   setCookie("actions", 0 , 30);
 
-   credits =  parseInt(getCookie("price"));
-  showCredits();
+    credits =  parseInt(getCookie("price"));
+    showCredits();
     toggle(e("start"));
-  alert('Payment Successfull');
+    
   }
-  
-
 }
 
 function checkCredits(){
@@ -90,7 +87,6 @@ if(getCookie("price")){
  credits =  parseInt(getCookie("price"));
 }
   }
-
 }
 
 checkCredits();
@@ -102,8 +98,8 @@ async function track_action(){
 
     if(e("start").style.display=="none"){
       
-    showCredits();
-var actions = 0;
+  showCredits();
+  var actions = 0;
   
   if(getCookie("actions")){
 actions = parseInt(getCookie("actions"));
@@ -114,9 +110,7 @@ actions = parseInt(getCookie("actions"));
   }else{
 if(actions>10){
   e("start").innerHTML = initCredits();
-
   toggle(e("start"));
-   
   auto_play_p_stop();
 }
   }
