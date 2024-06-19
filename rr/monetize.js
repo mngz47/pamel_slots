@@ -79,6 +79,9 @@ showCredits();
 
 
 async function track_action(){
+
+    if(e("start").style.display=="none"){
+      
     showCredits();
 var actions = 0;
   
@@ -91,15 +94,19 @@ actions = parseInt(getCookie("actions"));
   }else{
 if(actions>10){
   e("start").innerHTML = initCredits();
-  if(e("start").style.display=="none"){
+
   toggle(e("start"));
-   }
+   
   auto_play_p_stop();
 }
   }
 
   setCookie("price", (credits-cost) , 30);
    setCookie("actions", (actions+1) , 30);
+
+    }else{
+return true;
+    }
 }
 
     document.body.onmousedown = track_action;
