@@ -11,7 +11,9 @@
 */
 function initCredits(){
 return "<h6 style='color:white;' >Buy Credits:</h6>"+
-  "<div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button></div>";
+  "<div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>"+
+  "<br><br><input type=text id=voucher placeholder=voucher /><button onclick='monetize_voucher(e(\"voucher\").value);return false;' >redeem</button>"+
+  "</div>";
 }
 
 
@@ -39,6 +41,23 @@ this.cancel_url =  HOME+"?pp=0";
 setCookie("price", price, 30);
   
 payfast2();
+
+}
+
+function monetize_voucher(price){
+this.price = price;
+
+  if(price<100){
+  
+  setCookie("price", price, 30);
+  setCookie("payment", 1, 30);
+  setCookie("actions", 0 , 30);
+
+   credits =  parseInt(getCookie("price"));
+  showCredits();
+  alert('Payment Successfull');
+  }
+  
 
 }
 
