@@ -54,7 +54,9 @@ function monetize_voucher(price){
 
     credits =  parseInt(getCookie("price"));
     showCredits();
-    toggle(e("start"));
+   // toggle(e("start"));
+    e("start").style.display="none";
+    alert("success");
     
   }
 }
