@@ -10,10 +10,19 @@
    
 */
 function initCredits(){
-return "<h6 style='color:white;' >Buy Credits:</h6>"+
-  "<div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>"+
+  
+return "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"buy_credits\"));' >Buy Credits:</h6>"+
+  "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"withdraw\"));' >Withdraw:</h6>"+
+  "<div id='buy_credits' style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>"+
+  "<p><label>credit card</label><input type='checkbox' id=credit_card /><label>paypal</label><input type='checkbox' id=paypal /></p>"+
   "<br><br><input type=text id=voucher placeholder=voucher /><button onclick='monetize_voucher(e(\"voucher\").value);return false;' >redeem</button>"+
-  "</div>";
+  "</div>"+
+  "<div id='withdraw' style='margin-top:200px;display:none;' >"+
+  "<input type=number id=credits value=40 placeholder=w_credits /><button onclick='monetize_withdraw(e(\"w_credits\").value,e(\"paypal_id\").value);return false;' >withdraw</button>"+
+  "<br><br><input type=text id=paypal_id placeholder=paypal_id />"+
+  "</div>"+
+  "<div id=games ></div>";
+  
 }
 
 
@@ -59,6 +68,12 @@ function monetize_voucher(price){
     alert("success");
     
   }
+}
+
+function monetize_withdraw(credits,paypal_id){
+
+
+  alert("success");
 }
 
 function checkCredits(){
