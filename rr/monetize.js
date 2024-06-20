@@ -14,7 +14,7 @@ function initCredits(){
 return "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"buy_credits\"));' >Buy Credits:</h6>"+
   "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"withdraw\"));' >Withdraw:</h6>"+
   "<div id='buy_credits' style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>"+
-  "<p><label>credit card</label><input type='checkbox' id=credit_card /><label>paypal</label><input type='checkbox' id=paypal /></p>"+
+  "<p><label>credit card</label><input type='checkbox' id=credit_card /><label>paypal</label><input type='checkbox' id=paypal_option /></p>"+
   "<br><br><input type=text id=voucher placeholder=voucher /><button onclick='monetize_voucher(e(\"voucher\").value);return false;' >redeem</button>"+
   "</div>"+
   "<div id='withdraw' style='margin-top:200px;display:none;' >"+
@@ -48,9 +48,12 @@ this.return_url = HOME+"?pp=1";
 this.cancel_url =  HOME+"?pp=0";
 
 setCookie("price", price, 30);
-  
-payfast2();
 
+  if(e("credit_card").checked){
+payfast2();
+  }else if(e("paypal_option").checked){
+paypal();
+  }
 }
 
 function monetize_voucher(price){
