@@ -47,7 +47,7 @@ var game_data = "";
 					    if(res2.responseText){
             
 			        let jsonData2 = JSON.parse(res2.responseText);
-              game_data += "<a href='"+jsonData2["run"]+"' class=block > <img src='"+ jsonData2["cover_image"] +"' width=150 /> "+ jsonData2["title"] +" </a>"
+              game_data += "<a href='"+jsonData2["run"]+"' class=block > <img src='"+ jsonData2["cover_image"] +"' width=150 /> "+ jsonData2["title"] +" </a>";
             
               }
               };
