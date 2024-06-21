@@ -11,26 +11,49 @@
 */
 function initCredits(){
   
-return "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"buy_credits\"));' >Buy Credits:</h6>"+
-  "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"withdraw\"));' >Withdraw:</h6>"+
-  "<h6 style='color:white;display:inline-block;' onclick='toggle(e(\"withdraw\"));e(\"games\").innerHTML=loadGames();' >Games:</h6>"+
-  "<div id='buy_credits' style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>"+
+return 
+  "<h3 style='color:white;display:inline-block;' onclick='toggle(e(\"buy_credits\"));' >Buy Credits:</h3>"+
+  "<div id='buy_credits' >"+
+  "<input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e(\"credits\").value);return false;' >buy</button>"+
   "<p><label>credit card</label><input type='checkbox' id=credit_card /><label>paypal</label><input type='checkbox' id=paypal_option /></p>"+
   "<br><br><input type=text id=voucher placeholder=voucher /><button onclick='monetize_voucher(e(\"voucher\").value);return false;' >redeem</button>"+
   "</div>"+
-  "<div id='withdraw' style='margin-top:200px;display:none;' >"+
+   "<h3 style='color:white;display:inline-block;' onclick='toggle(e(\"withdraw\"));' >Withdraw:</h3>"+
+  "<div id='withdraw' style='display:none;' >"+
   "<input type=number id=credits value=40 placeholder=w_credits /><button onclick='monetize_withdraw(e(\"w_credits\").value,e(\"paypal_id\").value);return false;' >withdraw</button>"+
   "<br><br><input type=text id=paypal_id placeholder=paypal_id />"+
   "</div>"+
-  "<div id=games style='margin-top:200px;display:none;' ></div>";
+    "<h3 style='color:white;display:inline-block;' onclick='toggle(e(\"withdraw\"));e(\"games\").innerHTML=loadGames();' >Games:</h3>"+
+  "<div id=games style='display:none;' ></div>";
   
 }
 
 function loadGames(){
 var game_data = "";
 
-  
+  var res = sendreq("mongeziSibongakonke/game_data.json");
+	res.onload = function(){
+	if(res.responseText){
+            
+			let jsonData = JSON.parse(res.responseText);
+            for(var a=0;a<jsonData["run"].length){
 
+              var name = jsonData["run"][a].split("/");
+              name = name[name.length-1];
+              
+              var res2 = sendreq(name+"/meta.json");
+					    res2.onload = function(){
+
+					    if(res2.responseText){
+            
+			        let jsonData2 = JSON.parse(res2.responseText);
+              game_data += "<a href='"+jsonData2["run"]+"' class=block > <img src='"+ jsonData2["cover_image"] +"' width=150 /> "+ jsonData2["title"] +" </a>"
+            
+              }
+              };
+          }	
+	}
+  };
   return game_data;
 }
 
