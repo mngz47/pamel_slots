@@ -20,11 +20,26 @@
 <script src=https://mngz47.github.io/F-Snake/rr/cookie.js ></script>
    <script src=https://mngz47.github.io/F-Snake/rr/challenge.js ></script>
    <script src=https://mngz47.github.io/F-Snake/rr/payfast.js ></script>
-   
+       <script src=https://mngz47.github.io/pamel_slots/rr/monetize.js ></script>
 
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;z-index:1000;" >
    <h4>Credits:</h4>
    <div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e("credits").value);return false;' >buy</button></div>
+
+   <script>
+var res = sendreq("https://mngz47.github.io/mongeziSibongakonke/game_data.json");
+					res.onload = function(){
+
+					if(res.responseText){
+						alert(res.responseText);
+			let jsonData = JSON.parse(res.responseText);
+		alert(jsonData["run"].length);
+			e('start').innerHTML += res.responseText;
+                  
+					}	
+					};
+   </script>
+
 </div>
    <script>
       toggle(e("start"));
