@@ -36,7 +36,7 @@ var game_data = "";
 	if(res.responseText){
             
 			let jsonData = JSON.parse(res.responseText);
-            for(var a=0;a<jsonData["run"].length){
+            for(var a=0;a<jsonData["run"].length;a++){
 
               var name = jsonData["run"][a].split("/");
               name = name[name.length-1];
