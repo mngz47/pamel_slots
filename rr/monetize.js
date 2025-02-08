@@ -162,7 +162,7 @@ actions = parseInt(getCookie("actions"));
 if(actions>10){
   e("start").innerHTML = initCredits();
   toggle(e("start"));
-  auto_play_p_stop();
+  //auto_play_p_stop();
 }
   }
 
