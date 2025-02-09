@@ -143,7 +143,7 @@ In summary, Pamel Slots is a visually stunning, technologically advanced virtual
        <script src=https://mngz47.github.io/pamel_slots/rr/monetize.js ></script>
 
 <div id=start style="position: absolute;top:0;background-color:rgba(0,0,0,0.7);width:100%;height:100%;z-index:1000;" >
-   <h6>Buy Credits:</h6>
+   <h6 style="color:white;" >Buy Credits:</h6>
    <div style='margin-top:10px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e("credits").value);return false;' >buy</button></div>
 
 	 <div style='float:right;margin-top:10px;' ><input type=text id=credits placeholder=games /><button onclick='search(e("credits").value);return false;' >search</button></div>
@@ -156,10 +156,15 @@ var search_index = 0;
 
    var games =  e('contents').getElementsByTagName('p');
 
-	  if(search_index<games.length){
+	  if(search_index<menu.length){
 		 if(txt.length>4){
-	  if(games[search_index].innerHTML.toLowerCase().includes(txt.toLowerCase())){
-			e('search_results').appendChild(games[search_index]);
+	  if(menu[search_index].toLowerCase().includes(txt.toLowerCase())){
+
+		  e('menu').innerHTML = '';
+		   menu_index = search_index;
+		  serve_menu(menu[search_index]);
+		 
+		  
 	  }else{
 		  search(txt);
 		  search_index+=1;
@@ -174,6 +179,8 @@ var search_index = 0;
 </script>
 	
    <div id=menu style="overflow-x:auto;overflow:hidden;height:200px;width:100%;"></div>
+   
+	<div id=menu-text style="color:white;"></div>
 
 <script>
 
@@ -184,7 +191,82 @@ var search_index = 0;
 	      "travis-slot-machine",
 	      "HangMan",
 		    "Slot-Machine",
-	      "mia-slot-machine"
+	      "mia-slot-machine",
+		    "mega-slot",
+		    "avatar-slots",
+		    "bieberpong-static",
+		    "html5-pong",
+		    "html5-asteroids",
+		    
+		    "Karma-Slots",
+	      "Nirvana_Slot_Machine",
+	      "tahas-slot-machine",
+	      "SnakesLadders",
+		    "kasi_nametest",
+	      "cv_engine",
+		    "business_plan_engine",
+		    "games/2048",
+		    "games/40963",
+		    "games/attackonball",
+		    "games/blockdown",
+
+		     "games/bottle3",
+	      "games/breaklovers",
+	      "games/breakout3",
+	      "games/candy",
+		    "games/circlepath",
+	      "games/eatball",
+		    "games/eliminate",
+		    "games/fctank",
+		    "games/flappybird",
+		    "games/fruit",
+		    "games/fruitwar",
+
+		    "games/getcockscomb",
+	      "games/hitball",
+	      "games/hitgraywolf3",
+	      "games/jokingyou",
+		    "games/kite",
+	      "games/knifehit3",
+		    "games/kupao",
+		    "games/legendofwolf",
+		    "games/magicplain",
+		    "3D-Maze-Game",
+		    "games/maze",
+
+		       "games/memory",
+	      "games/minorminer",
+	      "games/mota",
+	      "games/p2ball",
+		    "games/pacman",
+	      "games/petparty",
+		    "games/pixelstar",
+		    "games/plane",
+		    "games/planewar",
+		    "games/prize",
+		    "games/puzzle",
+
+		    "games/quickrush3",
+	      "games/quitsmoke",
+	      "games/rhythm",
+	      "games/run",
+		    "games/runrobot",
+	      "games/russianblock",
+		    "games/shenjingmao",
+		    "games/shoot",
+		    "games/simplechess",
+		    "games/skeletonguard",
+		    "games/snap",
+
+		    "games/stardog",
+	      "games/starship",
+	      "games/susliks",
+	      "games/swordart",
+		    "games/tacit",
+	      "games/tank",
+		    "games/timberpig",
+		    "games/wipeglass"
+		    
 	    ];
 
 
@@ -196,12 +278,15 @@ var menu_index = 0;
 
 					if(res.responseText){
 			let jsonData = JSON.parse(res.responseText);
-			
-e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' style="animation: 20s slider infinite;" ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
 
-//e('slider').getElementsByTagName('figure')[0].innerHTML += '<img src="'+jsonData["cover_image"]+'" />';
+						if(menu_index<(menu_index+4)){
+e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' style="animation: 20s slider infinite;" ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
+						}else{
+e('menu-text').innerHTML += '<a href='+jsonData["run"]+' style="display:block;font-size:2em; text-decoration: none;" >'+jsonData["title"]+'</a>';
+
+						}
 						
-if(menu_index<menu.length){
+if(menu_index<(menu_index+8)){
 serve_menu( menu[menu_index]);
 menu_index+=1;
 }
@@ -209,6 +294,7 @@ menu_index+=1;
 					};
 			
 	}
+	
 serve_menu(menu[menu_index]);
 				
 </script>
