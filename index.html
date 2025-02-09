@@ -26,7 +26,7 @@
    <h4>Credits:</h4>
    <div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e("credits").value);return false;' >buy</button></div>
 
-   <div id=menu style="overflow-x:auto;overflow:hidden;animation: 20s slider infinite;"></div>
+   <div id=menu style="overflow-x:auto;overflow:hidden;"></div>
 
 <script>
 
@@ -50,7 +50,7 @@ var menu_index = 0;
 					if(res.responseText){
 			let jsonData = JSON.parse(res.responseText);
 			
-e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
+e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' style="animation: 20s slider infinite;" ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
 
 //e('slider').getElementsByTagName('figure')[0].innerHTML += '<img src="'+jsonData["cover_image"]+'" />';
 						
