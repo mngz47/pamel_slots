@@ -24,9 +24,36 @@
 
 <div id=start style="position: absolute;background-color:rgba(0,0,0,0.7);width:100%;height:100%;z-index:1000;" >
    <h4>Credits:</h4>
-   <div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e("credits").value);return false;' >buy</button></div>
+   <div style='margin-top:10px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e("credits").value);return false;' >buy</button></div>
 
-   <div id=menu style="overflow-x:auto;overflow:hidden;"></div>
+	 <div style='float:right;' ><input type=text id=credits placeholder=games /><button onclick='search(e("credits").value);return false;' >search</button></div>
+          <div id=search_results style="position:absolute;float:right;" ></div>
+<script>
+
+var search_index = 0;
+  
+  function search(txt){
+
+   var games =  e('contents').getElementsByTagName('p');
+
+	  if(search_index<games.length){
+		 if(txt.length>4){
+	  if(games[search_index].innerHTML.toLowerCase().includes(txt.toLowerCase())){
+			e('search_results').appendChild(games[search_index]);
+	  }else{
+		  search(txt);
+		  search_index+=1;
+	  }
+	  
+		 } 
+  }else{
+	          search_index=0;
+  }
+  }
+  
+</script>
+	
+   <div id=menu style="overflow-x:auto;overflow:hidden;height:200px;width:100%;"></div>
 
 <script>
 
