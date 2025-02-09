@@ -26,19 +26,45 @@
    <h4>Credits:</h4>
    <div style='margin-top:200px;' ><input type=number id=credits value=40 placeholder=credits /><button onclick='monetize_purchase(e("credits").value);return false;' >buy</button></div>
 
-   <script>
-var res = sendreq("https://mngz47.github.io/mongeziSibongakonke/game_data.json");
+   <div id=menu ></div>
+
+<script>
+
+	var menu = 
+	    [ 
+		"F-Snake",
+	      "pamel_slots",
+	      "travis-slot-machine",
+	      "HangMan",
+		    "Slot-Machine",
+	      "mia-slot-machine"
+	    ];
+
+
+var menu_index = 0;
+
+				function serve_menu(name){
+				var res = sendreq(name+"/meta.json");
 					res.onload = function(){
 
 					if(res.responseText){
 						alert(res.responseText);
 			let jsonData = JSON.parse(res.responseText);
-		alert(jsonData["run"].length);
-			e('start').innerHTML += res.responseText;
-                  
+			
+e('menu').innerHTML += '<a class=block href='+jsonData["run"]+' ><img src='+jsonData["cover_image"]+' width=200px />'+jsonData["title"]+'</a>';
+
+if(menu_index<menu.length){
+serve_menu( menu[menu_index]);
+menu_index+=1;
+}
 					}	
 					};
-   </script>
+			
+	}
+serve_menu(menu[menu_index]);
+				
+</script>
+
 
 </div>
    <script>
