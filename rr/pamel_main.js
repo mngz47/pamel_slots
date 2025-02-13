@@ -1,3 +1,7 @@
+// monetize.js sync 104 n 141
+// syncCredits
+
+
 var winning_command = Math.round(Math.random()*9);
 while(winning_command<4){
 winning_command = Math.round(Math.random()*9);
