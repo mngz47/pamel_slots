@@ -97,6 +97,9 @@ e("I_1").src='rr/loader.gif';
 e("I_2").src='rr/loader.gif';
 e("I_3").src='rr/loader.gif';
 var cost = (e('g_type').value=='houses'?50:(e('g_type').value=='cars'?25:(e('g_type').value=='fruits'?10:5)));
+
+     syncCredits(-(e('g_type').value=='houses'?50:(e('g_type').value=='cars'?25:(e('g_type').value=='fruits'?10:5))));
+     
 var p1 = Math.round(Math.random()*winning_command);
 var p2 = Math.round(Math.random()*winning_command);
 var p3 = Math.round(Math.random()*winning_command);
@@ -130,6 +133,8 @@ auto_play_p_stop();
    var email = prompt('Enter email.');
 
     writeUserData(userId, name, country, email, g_type);
+
+   syncCredits((e('g_type').value=='houses'?100000:(e('g_type').value=='cars'?50000:(e('g_type').value=='fruits'?25000:5000))));
    
 }else{
 //alert('Try Again');
